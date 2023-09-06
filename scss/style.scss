@@ -1,0 +1,47 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    background: $darkBackgroundColor;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+.container__header {
+    padding: 20px 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.wrapper.darken {
+    .switch-theme-btn {
+        @include switchThemeButton(#CB9821, #CB9821);
+    }
+}

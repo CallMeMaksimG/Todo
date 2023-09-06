@@ -1,0 +1,12 @@
+@mixin switchThemeButton($stroke, $fill) {
+    border: none;
+    background: inherit;
+    stroke: $stroke;
+    fill: $fill;
+    cursor: pointer;
+    transition: fill .3s, stroke .3s;
+    &:hover {
+        fill: lighten($fill, 15%);
+        stroke: lighten($fill, 15%);
+    }
+}
