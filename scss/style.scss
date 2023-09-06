@@ -27,7 +27,7 @@ html, body {
 
 .wrapper {
     min-height: 100%;
-    background: $darkBackgroundColor;
+    transition: background .4s ease-in-out;
 }
 
 .container {
@@ -41,7 +41,15 @@ html, body {
 }
 
 .wrapper.darken {
+    background: $darkBackgroundColor;
     .switch-theme-btn {
         @include switchThemeButton(#CB9821, #CB9821);
+    }
+}
+
+.wrapper.lighten {
+    background: $lightBackgroundColor;
+    .switch-theme-btn {
+        @include switchThemeButton(#29354B, #29354B);
     }
 }

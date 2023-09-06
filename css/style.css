@@ -26,7 +26,8 @@ html, body {
 
 .wrapper {
   min-height: 100%;
-  background: #223542;
+  -webkit-transition: background 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out;
 }
 
 .container {
@@ -44,6 +45,9 @@ html, body {
           justify-content: end;
 }
 
+.wrapper.darken {
+  background: #223542;
+}
 .wrapper.darken .switch-theme-btn {
   border: none;
   background: inherit;
@@ -56,4 +60,21 @@ html, body {
 .wrapper.darken .switch-theme-btn:hover {
   fill: #e3b955;
   stroke: #e3b955;
+}
+
+.wrapper.lighten {
+  background: #ECEBE9;
+}
+.wrapper.lighten .switch-theme-btn {
+  border: none;
+  background: inherit;
+  stroke: #29354B;
+  fill: #29354B;
+  cursor: pointer;
+  -webkit-transition: fill 0.3s, stroke 0.3s;
+  transition: fill 0.3s, stroke 0.3s;
+}
+.wrapper.lighten .switch-theme-btn:hover {
+  fill: #44587c;
+  stroke: #44587c;
 }
