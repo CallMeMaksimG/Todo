@@ -36,9 +36,10 @@ html, body {
 .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .container__header {
-    padding: 20px 5px;
+    padding: 20px 15px;
     display: flex;
     justify-content: end;
 }
@@ -58,80 +59,17 @@ form {
     transition: color .4s ease-in-out;
     display: flex;
 }
-.checkbox {
-    margin-right: 15px;
-}
-
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
-position: absolute;
-left: 0;
-opacity: 0.01;
-}
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
-position: relative;
-padding-left: 2.3em;
-font-size: 1.05em;
-line-height: 1.7;
-cursor: pointer;
-}
-
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
-content: '';
-position: absolute;
-left: 0;
-top: 0;
-width: 1.4em;
-height: 1.4em;
-border: 1px solid #aaa;
-border-radius: .2em;
-box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
--webkit-transition: all .275s;
-transition: all .275s;
-transition: background .4s ease-in-out;
-}
-
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
-content: '✓';
-position: absolute;
-top: .525em;
-left: .18em;
-font-size: 1.375em;
-line-height: 0;
--webkit-transition: all .2s;
-transition: all .2s;
-}
-
-/* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + label:after {
-opacity: 0;
--webkit-transform: scale(0) rotate(45deg);
-transform: scale(0) rotate(45deg);
-}
-
-[type="checkbox"]:checked + label:after {
-opacity: 1;
--webkit-transform: scale(1) rotate(0);
-transform: scale(1) rotate(0);
-}
-
-/* Disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
-box-shadow: none;
-border-color: #bbb;
-background-color: #e9e9e9;
-}
-
-[type="checkbox"]:disabled:checked + label:after {
-color: #777;
-}
-
-[type="checkbox"]:disabled + label {
-color: #aaa;
+.task__check-btn {
+    margin-right: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    border: 2px solid #686461;
+    background: inherit;
+    padding: 2px;
+    transform: translateY(-5px);
+    cursor: pointer;
+   
 }
 
 .task__delete-btn {
@@ -141,7 +79,12 @@ color: #aaa;
     margin-left: auto;
     margin-right: 30px;
     transition: stroke .4s ease-in-out, fill .4s ease-in-out, opacity .4s ease-in-out;
+
+    svg {
+        pointer-events: none;
+    }
 }
+
 
 
 .wrapper.darken {
@@ -162,15 +105,11 @@ color: #aaa;
     .task__list {
         color: $darkMainFontColor;
     }
-    [type="checkbox"]:not(:checked) + label:after,
-    [type="checkbox"]:checked + label:after {
-        color:  #ECC424;
+    .task__check-btn {
+        stroke:  #ECC424;
+        fill: #ECC424;
     }
 
-    [type="checkbox"]:not(:checked) + label:before,
-    [type="checkbox"]:checked + label:before {
-        background: $darkBackgroundColor;
-    }
     .task__delete-btn {
         @include deleteBtn($darkMainFontColor);
     }
@@ -196,14 +135,9 @@ color: #aaa;
         color: $lightMainFontColor;
     }
 
-    [type="checkbox"]:not(:checked) + label:after,
-    [type="checkbox"]:checked + label:after {
-        color:  $lightMainFontColor;
-    }
-
-    [type="checkbox"]:not(:checked) + label:before,
-    [type="checkbox"]:checked + label:before {
-        background: $lightBackgroundColor;
+    .task__check-btn {
+        stroke:  $lightMainFontColor;
+        fill: $lightMainFontColor;
     }
 
     .task__delete-btn {

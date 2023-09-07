@@ -21,12 +21,16 @@ const taskList = document.querySelector('.task__list');
 const taskItem = document.querySelectorAll('.task__list-item');
 const addTaskBtn = document.querySelector('.main-section__btn');
 const inputTextTask = document.querySelector('.main-section__input');
+const checkImage = `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.7048 4.95406C22.3143 4.56353 21.6811 4.56353 21.2906 4.95406L8.72696 17.5177C8.33643 17.9082 7.70327 17.9082 7.31274 17.5177L2.714 12.919C2.32348 12.5284
+ 1.69031 12.5284 1.29979 12.919C0.909266 13.3095 0.909265 13.9427 1.29979 14.3332L5.90392 18.9289C7.07575 20.0986 8.97367 20.0978 10.1445 18.9271L22.7048 6.36827C23.0953 5.97775 23.0953 5.34458 22.7048 4.95406Z"/>
+</svg>`;
 addTaskBtn.addEventListener('click', addTask);
 
 function addTask() {
     let textTask = inputTextTask.value;
     console.log(textTask)
-    const taskItemHTML = `<li class="task__list-item"><input id="1" class="checkbox" type="checkbox"><label for="1"></label>${textTask}<button class="task__delete-btn">
+    const taskItemHTML = `<li class="task__list-item"><button class="task__check-btn"></button>${textTask}<button class="task__delete-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.53113 1C5.52364 1 3.19671 3.63591 3.56974 6.62017L5.28873 20.3721C5.47639 21.8734 6.7526 23 8.26557 23H15.7344C17.2474
     23 18.5236 21.8734 18.7113 20.3721L20.4303 6.62017C20.8033 3.63591 18.4764 1 15.4689 1H8.53113ZM5.70148 5C6.11066 3.8455 7.21175 3 8.53113 3H15.4689C16.7883 3 17.8893 3.8455
@@ -35,9 +39,26 @@ function addTask() {
     9.00587 12.4201L10.5858 14L9.00001 15.5858C8.60949 15.9763 8.60949 16.6095 9.00001 17C9.39054 17.3905 10.0237 17.3905 10.4142 17L12 15.4142L13.5878 17.0019C13.9783 17.3925 14.6114
     17.3925 15.002 17.0019C15.3925 16.6114 15.3925 15.9782 15.002 15.5877L13.4142 14L15.002 12.4123C15.3925 12.0217 15.3925 11.3886 15.002 10.998Z"/>
     </svg></button></li>`;
-    taskList.innerHTML += taskItemHTML;
+    taskList.insertAdjacentHTML("beforeend", taskItemHTML);
+    cleanForm();
 }
 
+function cleanForm() {
+    inputTextTask.value = '';
+}
+const checkTaskBtn = document.querySelectorAll('.task__check-btn');
+
+taskList.addEventListener('click', checkTask);
+
+function checkTask(event) {
+    if(event.target.classList.value == 'task__check-btn') {
+        event.target.innerHTML = checkImage;
+    }
+    if(event.target.classList.value == 'task__delete-btn') {
+        const listItem = event.target.closest('.task__list-item');
+        listItem.remove();
+    }
+}
 
 
 
