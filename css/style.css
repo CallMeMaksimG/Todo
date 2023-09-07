@@ -33,7 +33,7 @@ html, body {
 }
 
 .container {
-  max-width: 1250px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -47,8 +47,12 @@ html, body {
           justify-content: end;
 }
 
+form {
+  position: relative;
+}
+
 .wrapper.darken {
-  background: #223542;
+  background: #142028;
 }
 .wrapper.darken .switch-theme-btn {
   border: none;
@@ -67,9 +71,80 @@ html, body {
   font-size: 60px;
   color: #D6DFE8;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   -webkit-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input {
+  width: 100%;
+  background: #697888;
+  color: #D6DFE8;
+  border: none;
+  outline: none;
+  padding: 17px 25px;
+  font-size: 20px;
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
+  margin-top: 80px;
+  -webkit-transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input::-webkit-input-placeholder {
+  color: #D6DFE8;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input::-moz-placeholder {
+  color: #D6DFE8;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -moz-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input:-ms-input-placeholder {
+  color: #D6DFE8;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -ms-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input::-ms-input-placeholder {
+  color: #D6DFE8;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -ms-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__input::placeholder {
+  color: #D6DFE8;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__btn {
+  position: absolute;
+  top: 96px;
+  right: 23px;
+  border: none;
+  background: inherit;
+  color: #D6DFE8;
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.darken .main-section__btn:hover {
+  opacity: 0.7;
 }
 
 .wrapper.lighten {
@@ -92,7 +167,78 @@ html, body {
   font-size: 60px;
   color: #192D45;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
   -webkit-transition: color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input {
+  width: 100%;
+  background: #ced6dd;
+  color: #192D45;
+  border: none;
+  outline: none;
+  padding: 17px 25px;
+  font-size: 20px;
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
+  margin-top: 80px;
+  -webkit-transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input::-webkit-input-placeholder {
+  color: #192D45;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input::-moz-placeholder {
+  color: #192D45;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -moz-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input:-ms-input-placeholder {
+  color: #192D45;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -ms-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input::-ms-input-placeholder {
+  color: #192D45;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -ms-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__input::placeholder {
+  color: #192D45;
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 200;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__btn {
+  position: absolute;
+  top: 96px;
+  right: 23px;
+  border: none;
+  background: inherit;
+  color: #192D45;
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+.wrapper.lighten .main-section__btn:hover {
+  opacity: 0.7;
 }

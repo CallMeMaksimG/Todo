@@ -33,13 +33,16 @@ html, body {
 }
 
 .container {
-    max-width: 1250px;
+    max-width: 900px;
     margin: 0 auto;
 }
 .container__header {
     padding: 20px 5px;
     display: flex;
     justify-content: end;
+}
+form {
+    position: relative;
 }
 
 .wrapper.darken {
@@ -50,6 +53,12 @@ html, body {
     .main-section__title {
         @include title($darkMainFontColor);
     }
+    .main-section__input {
+        @include inputTask(#697888, $darkMainFontColor, $darkMainFontColor);
+    }
+    .main-section__btn {
+        @include addBtn($darkMainFontColor);
+    }
 }
 
 .wrapper.lighten {
@@ -59,5 +68,11 @@ html, body {
     }
     .main-section__title {
         @include title($lightMainFontColor);
+    }
+    .main-section__input {
+        @include inputTask(#ced6dd, $lightMainFontColor, $lightMainFontColor);
+    }
+    .main-section__btn {
+        @include addBtn($lightMainFontColor);
     }
 }
