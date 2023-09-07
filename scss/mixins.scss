@@ -10,3 +10,11 @@
         stroke: lighten($fill, 15%);
     }
 }
+
+@mixin title($color) {
+    font-size: 60px;
+    color: $color;
+    text-align: center;
+    margin-top: 50px;
+    transition: color .4s ease-in-out;
+}

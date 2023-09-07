@@ -11,13 +11,8 @@ function switchTheme() {
     if(pageWrapper.classList.value == 'wrapper darken') {
         pageWrapper.classList.toggle('lighten');
         switchThemeBtn.innerHTML = lightThemeBtn;
-        switchThemeBtn.classList.toggle('darken');
-    } else {
-        switchThemeBtn.classList.toggle('darken');  
+    } else { 
         pageWrapper.classList.toggle('lighten'); 
         switchThemeBtn.innerHTML = darkThemeBtn;
     }
-    
-    
-    // switchThemeBtn.classList.toggle('darken');
 }
