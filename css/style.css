@@ -79,15 +79,24 @@ form {
 
 .task__check-btn {
   margin-right: 20px;
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
   border: 2px solid #686461;
   background: inherit;
   padding: 2px;
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
   cursor: pointer;
+}
+.task__check-btn svg {
+  display: none;
+}
+.task__check-btn svg.check-btn__svg--active {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  pointer-events: none;
 }
 
 .task__delete-btn {
@@ -135,7 +144,7 @@ form {
   border: none;
   outline: none;
   padding: 17px 25px;
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 30px;
   font-family: "Inter", sans-serif;
   margin-top: 80px;
@@ -246,7 +255,7 @@ form {
   border: none;
   outline: none;
   padding: 17px 25px;
-  font-size: 20px;
+  font-size: 22px;
   border-radius: 30px;
   font-family: "Inter", sans-serif;
   margin-top: 80px;

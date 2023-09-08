@@ -21,7 +21,7 @@ const taskList = document.querySelector('.task__list');
 const taskItem = document.querySelectorAll('.task__list-item');
 const addTaskBtn = document.querySelector('.main-section__btn');
 const inputTextTask = document.querySelector('.main-section__input');
-const checkImage = `<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+const checkImage = `<svg class="check-btn__svg" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M22.7048 4.95406C22.3143 4.56353 21.6811 4.56353 21.2906 4.95406L8.72696 17.5177C8.33643 17.9082 7.70327 17.9082 7.31274 17.5177L2.714 12.919C2.32348 12.5284
  1.69031 12.5284 1.29979 12.919C0.909266 13.3095 0.909265 13.9427 1.29979 14.3332L5.90392 18.9289C7.07575 20.0986 8.97367 20.0978 10.1445 18.9271L22.7048 6.36827C23.0953 5.97775 23.0953 5.34458 22.7048 4.95406Z"/>
 </svg>`;
@@ -30,7 +30,7 @@ addTaskBtn.addEventListener('click', addTask);
 function addTask() {
     let textTask = inputTextTask.value;
     console.log(textTask)
-    const taskItemHTML = `<li class="task__list-item"><button class="task__check-btn"></button>${textTask}<button class="task__delete-btn">
+    const taskItemHTML = `<li class="task__list-item"><button class="task__check-btn">${checkImage}</button>${textTask}<button class="task__delete-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.53113 1C5.52364 1 3.19671 3.63591 3.56974 6.62017L5.28873 20.3721C5.47639 21.8734 6.7526 23 8.26557 23H15.7344C17.2474
     23 18.5236 21.8734 18.7113 20.3721L20.4303 6.62017C20.8033 3.63591 18.4764 1 15.4689 1H8.53113ZM5.70148 5C6.11066 3.8455 7.21175 3 8.53113 3H15.4689C16.7883 3 17.8893 3.8455
@@ -48,15 +48,22 @@ function cleanForm() {
 }
 const checkTaskBtn = document.querySelectorAll('.task__check-btn');
 
-taskList.addEventListener('click', checkTask);
+taskList.addEventListener('click', deleteTask);
 
-function checkTask(event) {
-    if(event.target.classList.value == 'task__check-btn') {
-        event.target.innerHTML = checkImage;
-    }
+taskList.addEventListener('click', doneTask);
+
+function deleteTask(event) {
     if(event.target.classList.value == 'task__delete-btn') {
         const listItem = event.target.closest('.task__list-item');
         listItem.remove();
+    }
+}
+
+function doneTask(event) {
+    if(event.target.classList.value == 'task__check-btn') {
+        const doneCheckImg = event.target.querySelector('.check-btn__svg');
+        console.log(doneCheckImg)
+        doneCheckImg.classList.toggle('check-btn__svg--active');
     }
 }
 
