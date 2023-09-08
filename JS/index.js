@@ -30,7 +30,7 @@ addTaskBtn.addEventListener('click', addTask);
 function addTask() {
     let textTask = inputTextTask.value;
     console.log(textTask)
-    const taskItemHTML = `<li class="task__list-item"><button class="task__check-btn">${checkImage}</button>${textTask}<button class="task__delete-btn">
+    const taskItemHTML = `<li class="task__list-item"><button class="task__check-btn">${checkImage}</button><span class="task__text-task">${textTask}</span><button class="task__delete-btn">
     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.53113 1C5.52364 1 3.19671 3.63591 3.56974 6.62017L5.28873 20.3721C5.47639 21.8734 6.7526 23 8.26557 23H15.7344C17.2474
     23 18.5236 21.8734 18.7113 20.3721L20.4303 6.62017C20.8033 3.63591 18.4764 1 15.4689 1H8.53113ZM5.70148 5C6.11066 3.8455 7.21175 3 8.53113 3H15.4689C16.7883 3 17.8893 3.8455
@@ -63,7 +63,11 @@ function doneTask(event) {
     if(event.target.classList.value == 'task__check-btn') {
         const doneCheckImg = event.target.querySelector('.check-btn__svg');
         console.log(doneCheckImg)
-        doneCheckImg.classList.toggle('check-btn__svg--active');
+        doneCheckImg.classList.toggle('check-btn__svg--done');
+        // console.log(event.target.closest('.task__list-item'))
+        const listItem = event.target.closest('.task__list-item');
+        const textTask = listItem.querySelector('.task__text-task');
+        textTask.classList.toggle('task__text-task--done');
     }
 }
 

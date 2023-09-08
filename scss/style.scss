@@ -71,12 +71,16 @@ form {
     cursor: pointer;
         svg {
             display: none;
-            &.check-btn__svg--active {
+            &.check-btn__svg--done {
                 display: inline-flex;
                 pointer-events: none;
             }
         }
     
+}
+.task__text-task--done {
+    text-decoration: line-through;
+    opacity: 0.8;
 }
 
 .task__delete-btn {

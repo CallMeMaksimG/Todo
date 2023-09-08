@@ -92,11 +92,16 @@ form {
 .task__check-btn svg {
   display: none;
 }
-.task__check-btn svg.check-btn__svg--active {
+.task__check-btn svg.check-btn__svg--done {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   pointer-events: none;
+}
+
+.task__text-task--done {
+  text-decoration: line-through;
+  opacity: 0.8;
 }
 
 .task__delete-btn {
