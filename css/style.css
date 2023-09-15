@@ -55,6 +55,7 @@ form {
 
 .task {
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 .task__list {

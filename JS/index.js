@@ -23,6 +23,11 @@ if (localStorage.getItem('tasks')) {
     })
 }
 
+if (localStorage.getItem('theme') == 'lighten') {
+    pageWrapper.classList.toggle('lighten'); 
+    switchThemeBtn.innerHTML = darkThemeBtn;
+}
+
 switchThemeBtn.addEventListener('click', switchTheme);
 
 addTaskBtn.addEventListener('click', addTask);
@@ -35,10 +40,16 @@ function switchTheme() {
     if(pageWrapper.classList.value == 'wrapper darken') {
         pageWrapper.classList.toggle('lighten');
         switchThemeBtn.innerHTML = lightThemeBtn;
+        saveThemeToLocalStorage('lighten');
     } else { 
         pageWrapper.classList.toggle('lighten'); 
         switchThemeBtn.innerHTML = darkThemeBtn;
+        saveThemeToLocalStorage('darken');
     }
+}
+
+function saveThemeToLocalStorage(themeName) {
+    localStorage.setItem('theme', themeName);
 }
 
 function addTask() {
