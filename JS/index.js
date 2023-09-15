@@ -25,7 +25,7 @@ if (localStorage.getItem('tasks')) {
 
 if (localStorage.getItem('theme') == 'lighten') {
     pageWrapper.classList.toggle('lighten'); 
-    switchThemeBtn.innerHTML = darkThemeBtn;
+    switchThemeBtn.innerHTML = lightThemeBtn;
 }
 
 switchThemeBtn.addEventListener('click', switchTheme);
