@@ -341,3 +341,12 @@ form {
 .wrapper.lighten .task__delete-btn:hover {
   opacity: 0.5;
 }
+
+@media (max-width: 500px) {
+  .task__list {
+    padding-left: 0;
+  }
+  .task__delete-btn {
+    margin-right: 0;
+  }
+}

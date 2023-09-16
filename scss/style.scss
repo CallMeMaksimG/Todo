@@ -156,3 +156,12 @@ form {
         @include deleteBtn($lightMainFontColor);
     }
 }
+
+@media(max-width: 500px) {
+    .task__list{
+        padding-left: 0;
+    }
+    .task__delete-btn{
+        margin-right: 0;
+    }
+}
